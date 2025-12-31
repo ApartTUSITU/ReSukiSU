@@ -418,7 +418,7 @@ static int do_manage_mark(void __user *arg)
             return ret;
         }
         cmd.result = (u32)ret;
-#elif CONFIG_KSU_SUSFS
+#elif defined(CONFIG_KSU_SUSFS)
         if (susfs_is_current_proc_umounted()) {
             ret = 0; // SYSCALL_TRACEPOINT is NOT flagged
         } else {
